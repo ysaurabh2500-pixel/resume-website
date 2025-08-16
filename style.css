@@ -1,0 +1,82 @@
+/* Library Theme – Clean, print-friendly, responsive */
+*{box-sizing:border-box}
+:root{
+  --bg: #fffdf7;
+  --paper: #fffaf0;
+  --ink: #0b3d2e;
+  --muted: #2e5e4f;
+  --accent: #1f7a5f;
+  --ring: #c8e8dc;
+  --card: #fffbf2;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 16px}
+.icon{width:18px;height:18px;vertical-align:-3px}
+
+/* Nav */
+.nav{position:sticky;top:0;background:linear-gradient(180deg,#fffaf0cc,#fffaf000), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><g fill="%23e8dfc7" opacity="0.6"><rect x="0" y="0" width="20" height="160"/><rect x="30" y="0" width="20" height="160"/><rect x="60" y="0" width="20" height="160"/></g></svg>') repeat; backdrop-filter:saturate(130%) blur(8px); border-bottom:1px solid #eadfca; z-index:10}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{font-weight:800;letter-spacing:.5px}
+.links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.links a{padding:6px 8px;border-radius:10px}
+.links a:hover{background:var(--paper)}
+.btn{border:none;border-radius:999px;padding:8px 14px;cursor:pointer;box-shadow:var(--shadow);background:var(--card);color:var(--ink)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+
+/* Hero */
+.hero{background:radial-gradient(1000px 300px at 30% -10%, #e8fff5, transparent), radial-gradient(800px 300px at 80% -10%, #fff1cf, transparent)}
+.hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;padding:40px 0}
+.hero h1{margin:0;font-size:40px;letter-spacing:.3px}
+.role{margin:6px 0 10px;color:var(--muted);font-weight:600}
+.summary{background:var(--paper);padding:14px;border-radius:14px;border:1px solid #eadfca;box-shadow:var(--shadow)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{font-size:14px;padding:8px 12px;background:#fff;border:1px solid #dfe8e3;border-radius:999px;display:inline-flex;gap:6px;align-items:center;color:var(--ink)}
+.pill.link:hover{border-color:var(--accent)}
+.cta{display:flex;gap:8px;margin-top:14px}
+.hero-badge{display:flex;justify-content:end;align-items:center}
+.badge{width:140px;height:140px;border-radius:28px;background:#fff7e6;border:4px solid var(--accent);display:grid;place-items:center;box-shadow:inset 0 6px 30px rgba(0,0,0,.06)}
+.badge-icon{width:64px;height:64px;color:var(--accent)}
+
+/* Sections */
+.stack{display:grid;gap:42px;padding:40px 0}
+.section-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.section-head h2{margin:0;font-size:22px}
+.card{background:var(--card);padding:18px;border-radius:16px;border:1px solid #eadfca;box-shadow:var(--shadow)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#fff;border:1px solid #dfe8e3;border-radius:999px;padding:8px 12px}
+.vstack{display:grid;gap:16px}
+.job-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.muted{color:var(--muted)}
+.period{font-size:14px;color:var(--muted)}
+.grid{display:grid;gap:16px}
+.grid.split{grid-template-columns:1fr 1fr}
+.edu-title{font-weight:700}
+
+.link-card{display:block}
+.link-top{display:flex;align-items:center;justify-content:space-between}
+
+/* Contact */
+.form{display:grid;gap:10px}
+.form input,.form textarea{border:1px solid #cfe1d9;border-radius:12px;padding:10px;font:inherit}
+.form input:focus,.form textarea:focus{outline:3px solid var(--ring);border-color:var(--accent)}
+
+/* Footer */
+.footer{border-top:1px solid #eadfca;background:#fff9ef;padding:24px 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-inner{grid-template-columns:1fr}
+  .grid.split{grid-template-columns:1fr}
+}
+
+/* Print */
+@media print{
+  .nav,.footer,#projects,#contact{display:none !important}
+  body{background:#fff}
+  .container{padding:0}
+}
